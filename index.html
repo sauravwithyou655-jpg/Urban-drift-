@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urban Drift</title>
+  <meta name="description" content="Urban Drift - Casual Clothing Online Store" />
+  <!-- Google Analytics placeholder -->
+  <!-- Replace G-XXXXXXXXXX with your GA4 ID if desired -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <h1 class="logo">URBAN DRIFT</h1>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h2>Redefine Casual.</h2>
+        <p>For the ones who move with the city.</p>
+        <button class="cta" onclick="scrollToShop()">Shop Now</button>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="container">
+        <h3 class="section-title">Featured Collection</h3>
+        <div class="filters">
+          <div class="filter-group">
+            <button class="filter active" data-cat="All">All</button>
+            <button class="filter" data-cat="Men">Men</button>
+            <button class="filter" data-cat="Women">Women</button>
+          </div>
+          <div class="filter-group">
+            <button class="filter-price active" data-price="All">All</button>
+            <button class="filter-price" data-price="Below1000">Below ₹1000</button>
+            <button class="filter-price" data-price="1000to1500">₹1000 - ₹1500</button>
+            <button class="filter-price" data-price="Above1500">Above ₹1500</button>
+          </div>
+        </div>
+
+        <div id="products" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section bw">
+      <div class="container">
+        <h3>About Urban Drift</h3>
+        <p>Urban Drift is built for those who believe style is more than fashion — it's attitude. We blend comfort and culture to create clothing that keeps up with your pace.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h3>Contact</h3>
+        <p>Follow us on social media or drop a message at <strong>hello@urbandrift.example</strong></p>
+        <div class="socials">
+          <a href="#" class="social">Instagram</a>
+          <a href="#" class="social">Twitter</a>
+          <a href="#" class="social">Threads</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="drawer hidden">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <h4>Your Cart</h4>
+        <button id="closeCart" class="close">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="drawer-footer">
+        <div class="total">Total: <span id="totalAmt">₹0</span></div>
+        <button id="checkoutBtn" class="btn black">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-inner">
+      <button id="closeCheckout" class="close">✕</button>
+      <h3>Checkout</h3>
+      <form id="checkoutForm">
+        <input name="name" placeholder="Full Name" required />
+        <input name="email" type="email" placeholder="Email Address" required />
+        <input name="address" placeholder="Shipping Address" required />
+        <input name="city" placeholder="City" required />
+        <input name="postal" placeholder="Postal Code" required />
+        <select name="payment" required>
+          <option value="">Payment Method</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="cod">Cash on Delivery</option>
+        </select>
+        <button type="submit" class="btn black">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation -->
+  <div id="orderConfirm" class="modal hidden">
+    <div class="modal-inner center">
+      <h3>Thank you for your order!</h3>
+      <p>Your order has been placed successfully. We'll notify you once it ships.</p>
+      <button id="continueBtn" class="btn black">Continue Shopping</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Urban Drift. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
